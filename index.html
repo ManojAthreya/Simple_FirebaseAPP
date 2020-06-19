@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1>Cloud Foodspots</h1>
+
+        <div class="content">
+
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="area" placeholder="Area">
+                <input type="text" name="city" placeholder="City">
+                <button>Add Foodspot</button>
+            </form>
+
+            <ul id="cafe-list"></ul>
+
+        </div>
+
+        <script>
+            // Initialize Firebase
+            const firebaseConfig = {
+                                    apiKey: "AIzaSyCXErNSQ3a2M58pgmKC7VHU3Ba1hF-NVfQ",
+                                    authDomain: "foodspots-5dabc.firebaseapp.com",
+                                    databaseURL: "https://foodspots-5dabc.firebaseio.com",
+                                    projectId: "foodspots-5dabc",
+                                    storageBucket: "foodspots-5dabc.appspot.com",
+                                    messagingSenderId: "837048140249",
+                                    appId: "1:837048140249:web:ed0131d95f0369362b19c8",
+                                    measurementId: "G-YDBJCK387F"
+                                    };
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>
